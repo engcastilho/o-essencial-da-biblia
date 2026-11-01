@@ -320,8 +320,8 @@ form .buy { border: 0; cursor: pointer; width: 100%; }
   /* ==== CONFIGURAÇÃO ==== */
   // Endereço que recebe os cadastros (ex.: formulário do MailerLite, Brevo, Formspree ou Google Forms).
   // Enquanto estiver vazio, o mapa é liberado sem guardar o cadastro.
-  const FORM_ENDPOINT = '';
-  const FIELD = { nome: 'nome', email: 'email' };   // nomes dos campos que o serviço espera
+  const FORM_ENDPOINT = 'https://fdcedfea.sibforms.com/serve/MUIFAESxISyeS7UGbfknWfJhGpVEZgNI2jkqnGzFAfwaoF0SgElyEUOvphyfTyEfFhVm70fvdfZJ_t1JAqW8ZgDl_7zZu_0l346IEDZ2kLXCBvbEA2L5eIjlJoiO1QsY4rnHR4x4dwSugQsLlXnOf4eMBE1f0tfxxCVRnDg5qs3BmgdKCL5E-6c6EgaskLaLrjJRWz1PL1dPSN1jwA==';
+  const FIELD = { nome: 'NOME_PENDENTE', email: 'EMAIL' };   // nomes dos campos que o serviço espera
   const PROMO_END = '2026-11-04T23:59:59-03:00';    // o mesmo prazo da página de vendas
   /* ====================== */
 
@@ -338,7 +338,7 @@ form .buy { border: 0; cursor: pointer; width: 100%; }
     const btn = document.getElementById('enviar');
     btn.disabled = true; btn.textContent = 'Enviando…';
     if (FORM_ENDPOINT) {
-      const data = new FormData(); data.append(FIELD.nome, nome); data.append(FIELD.email, email);
+      const data = new FormData(); data.append(FIELD.email, email); data.append(FIELD.nome, nome); data.append('email_address_check', ''); data.append('locale', 'pt');
       try { await fetch(FORM_ENDPOINT, { method: 'POST', body: data, mode: 'no-cors' }); } catch (e) {}
     }
     document.getElementById('quem').textContent = nome + ', o mapa é seu';
