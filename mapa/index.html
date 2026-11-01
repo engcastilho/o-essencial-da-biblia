@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Bíblia em uma página · grátis</title>
+<meta name="description" content="Mapa gratuito: os 14 movimentos do Antigo Testamento e os 8 do Novo numa única página.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="A Bíblia em uma página · mapa grátis">
+<meta property="og:description" content="Os 14 movimentos do Antigo Testamento e os 8 do Novo numa linha do tempo. Baixe grátis.">
+<meta property="og:image" content="https://engcastilho.github.io/o-essencial-da-biblia/assets/og-mapa.jpg">
+<meta property="og:url" content="https://engcastilho.github.io/o-essencial-da-biblia/mapa/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: a missal-like reading column with red rubric labels in the margin; one wide band for the offer. */
+:root {
+  --paper: #FAF8F5; --card: #FFFFFF; --ink: #1C1715; --muted: #675E57; --line: #E4DDD4;
+  --rubric: #8C2020; --rubric-ink: #FFFFFF; --rubric-soft: #F4E9E5;
+  --cloth: #5B1818; --cloth-2: #3F0F0F; --gilt: #C7A55B; --shadow: 0 18px 40px -18px rgba(40, 18, 12, .35);
+  --display: "Cormorant Garamond", "Palatino Linotype", Palatino, Georgia, serif;
+  --body: "Source Serif 4", "Palatino Linotype", Georgia, serif;
+  --rubrics: "EB Garamond", "Palatino Linotype", Georgia, serif;
+  --measure: 40rem;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #131010; --card: #1B1716; --ink: #ECE5DE; --muted: #A79C94; --line: #2F2826;
+  --rubric: #E38D7E; --rubric-ink: #1A0E0C; --rubric-soft: #2A1A18;
+  --cloth: #561616; --cloth-2: #380D0D; --gilt: #D6B66C; --shadow: 0 18px 40px -18px rgba(0, 0, 0, .7); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #131010; --card: #1B1716; --ink: #ECE5DE; --muted: #A79C94; --line: #2F2826;
+  --rubric: #E38D7E; --rubric-ink: #1A0E0C; --rubric-soft: #2A1A18;
+  --cloth: #561616; --cloth-2: #380D0D; --gilt: #D6B66C; --shadow: 0 18px 40px -18px rgba(0, 0, 0, .7); color-scheme: dark }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+img { max-width: 100%; }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+a { color: var(--rubric); }
+.wrap { max-width: 68rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -.005em; }
+h2 { font-size: clamp(2rem, 4.2vw, 2.9rem); }
+h3 { font-size: 1.55rem; }
+p { margin: 0; }
+.rub { font-family: var(--rubrics); font-variant: small-caps; font-feature-settings: "smcp", "c2sc"; letter-spacing: .12em; color: var(--rubric); font-size: .95rem; }
+.lead { font-size: 1.2rem; line-height: 1.6; color: var(--ink); }
+.muted { color: var(--muted); }
+.stack { display: grid; gap: 1.1rem; }
+.prose { max-width: var(--measure); }
+section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+
+/* botão */
+.buy { display: inline-block; text-align: center; background: var(--rubric); color: var(--rubric-ink);
+  font: 600 1.05rem/1.2 var(--body); text-decoration: none; padding: 1rem 1.5rem; border-radius: 3px; transition: transform .15s ease, filter .15s ease; }
+.buy:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.buy:focus-visible, .ghost:focus-visible, summary:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+.buy small { font-weight: 400; opacity: .85; }
+.ghost { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rubric); padding-bottom: 1px; }
+.trust { font-size: .9rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; }
+.trust span::before { content: "✠ "; color: var(--rubric); }
+
+/* topo */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .6rem; }
+.brand { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; color: var(--ink); text-decoration: none; font-size: 1.02rem; white-space: nowrap; }
+.brand b { color: var(--rubric); font-weight: 500; }
+.bar .buy { padding: .55rem 1rem; font-size: .95rem; white-space: nowrap; flex: none; }
+.bar nav { display: flex; gap: 1.4rem; font-size: .95rem; }
+.bar nav a { color: var(--muted); text-decoration: none; } .bar nav a:hover { color: var(--ink); }
+@media (max-width: 760px) { .bar nav { display: none; } }
+
+/* promoção */
+.promo { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; background: var(--rubric-soft); border: 1px solid var(--line); border-left: 3px solid var(--rubric); padding: .7rem 1rem; font-size: .98rem; }
+.promo s { color: var(--muted); }
+.promo b { color: var(--rubric); font-size: 1.15rem; }
+.cd { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.only-regular { display: none; }
+:root[data-promo="off"] .only-promo { display: none !important; }
+:root[data-promo="off"] .only-regular { display: revert; }
+.bar .cdbox { font-size: .9rem; color: var(--muted); }
+@media (max-width: 760px) { .bar .cdbox { display: none; } }
+/* barra fixa no celular */
+.dock { display: none; }
+@media (max-width: 760px) {
+  .dock { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; align-items: center; justify-content: space-between; gap: .8rem;
+    background: var(--card); border-top: 1px solid var(--line); box-shadow: 0 -10px 24px -18px rgba(0,0,0,.4);
+    padding: .6rem max(16px, env(safe-area-inset-right, 0px)) calc(.6rem + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+  .dock .p { font-size: .82rem; line-height: 1.25; color: var(--muted); min-width: 0; }
+  .dock .p b { display: block; color: var(--ink); font-size: 1.05rem; }
+  .dock .buy { padding: .7rem 1rem; font-size: .95rem; white-space: nowrap; flex: none; }
+  footer { padding-bottom: 6.5rem; }
+}
+/* história */
+.story { max-width: var(--measure); display: grid; gap: 1rem; margin-top: 1.6rem; font-size: 1.12rem; line-height: 1.7; }
+.story p:first-child::first-letter { font-family: var(--display); font-size: 3.4em; float: left; line-height: .8; padding: .08em .1em 0 0; color: var(--rubric); font-weight: 600; }
+.savings { font-weight: 600; color: var(--rubric); }
+
+/* hero */
+.hero { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem); border-top: 0; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); line-height: 1.0; }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--rubric); }
+.hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; margin-top: .4rem; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } }
+
+/* livro (capa tipográfica) */
+.book-stage { display: grid; justify-items: center; gap: 1.4rem; }
+.book { width: min(17rem, 72vw); aspect-ratio: 17 / 24; position: relative; transform: perspective(1200px) rotateY(-14deg) rotateX(2deg);
+  transform-origin: left center; border-radius: 2px 6px 6px 2px; box-shadow: var(--shadow), 18px 22px 30px -16px rgba(0,0,0,.35);
+  background: linear-gradient(90deg, var(--cloth-2) 0 4%, rgba(255,255,255,.08) 4.4%, var(--cloth) 5% 100%); color: #F1E6D4;
+  display: grid; grid-template-rows: auto 1fr auto; padding: 12% 11% 10% 15%; text-align: center; }
+.book::after { content: ""; position: absolute; inset: 5% 5% 5% 9%; border: 1px solid color-mix(in srgb, var(--gilt) 75%, transparent); pointer-events: none; }
+.book .k { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .2em; font-size: .72rem; color: var(--gilt); }
+.book .t { align-self: center; font-family: var(--display); font-weight: 600; font-size: clamp(1.55rem, 4.2vw, 2rem); line-height: 1.02; }
+.book .t span { display: block; font-size: .5em; font-weight: 500; font-style: italic; margin-top: .7rem; color: #E3D3B8; }
+.book .t i { display: block; width: 2.4rem; height: 1px; background: var(--gilt); margin: .9rem auto 0; }
+.book .a { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; font-size: .7rem; color: #E3D3B8; }
+.verse { width: min(24rem, 100%); background: var(--card); border: 1px solid var(--line); padding: .9rem 1rem; display: grid; grid-template-columns: 1.2rem 1fr 1fr; gap: .2rem .8rem; font-size: .9rem; line-height: 1.45; }
+.verse .n { color: var(--rubric); font-weight: 600; font-size: .8rem; padding-top: .1rem; }
+.verse .la { color: var(--muted); font-style: italic; }
+.verse .h { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: .35rem; margin-bottom: .2rem; }
+.verse .h .rub { font-size: .8rem; }
+
+/* dor */
+.pains { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 2rem; }
+.pains div { background: var(--paper); padding: 1.2rem 1.3rem; font-size: 1.02rem; }
+.pains b { display: block; font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin-bottom: .2rem; }
+@media (max-width: 640px) { .pains { grid-template-columns: minmax(0, 1fr); } }
+.turn { margin-top: 2rem; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 1.9rem); line-height: 1.25; max-width: 44rem; font-weight: 500; }
+
+/* método */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
+.crit { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.crit div { display: grid; grid-template-columns: 2.4rem 1fr; gap: .8rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.crit .roman { font-family: var(--display); font-size: 1.6rem; color: var(--rubric); line-height: 1; }
+.crit b { font-weight: 600; }
+.figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1.2rem; margin-top: 2.2rem; }
+.figures div { border-left: 2px solid var(--rubric); padding-left: .9rem; }
+.figures strong { display: block; font-family: var(--display); font-size: 2.6rem; line-height: 1; font-weight: 600; font-variant-numeric: lining-nums; }
+.figures span { font-size: .93rem; color: var(--muted); }
+
+/* amostras */
+.pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; margin-top: 2.4rem; }
+.pages figure { margin: 0; display: grid; gap: .7rem; }
+.pages img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.pages figcaption { font-size: .93rem; color: var(--muted); }
+.pages figcaption b { color: var(--ink); font-weight: 600; }
+@media (max-width: 860px) { .pages { grid-template-columns: minmax(0, 1fr); max-width: 26rem; } }
+.parts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.4rem; margin-top: 2.6rem; }
+.parts .rub { display: block; margin-bottom: .2rem; }
+.parts h3 { margin-bottom: .4rem; }
+.parts p { font-size: .98rem; color: var(--muted); }
+@media (max-width: 700px) { .parts { grid-template-columns: minmax(0, 1fr); } }
+
+/* plano */
+.weeks { margin-top: 2.2rem; border-top: 1px solid var(--line); }
+.week { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) minmax(0, 1.3fr); gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.week .rub { font-size: .9rem; }
+.week .f { font-family: var(--display); font-size: 1.3rem; font-weight: 600; line-height: 1.2; }
+.week .r { font-size: .93rem; color: var(--muted); }
+.testament { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; color: var(--muted); font-size: .85rem; padding-top: 1.4rem; }
+@media (max-width: 700px) { .week { grid-template-columns: minmax(0, 1fr); gap: .15rem; } }
+.method { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.method div { background: var(--card); border: 1px solid var(--line); padding: 1rem; font-size: .95rem; }
+.method b { display: block; font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
+.method span { color: var(--rubric); font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .1em; font-size: .85rem; }
+@media (max-width: 760px) { .method { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* bônus */
+.bonus { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 2.6rem; margin-top: 2.6rem; }
+.bonus article { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+.bonus img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.bonus article.wide img { aspect-ratio: auto; }
+.bonus h3 { font-size: 1.4rem; margin: .15rem 0 .35rem; }
+.bonus p { font-size: .97rem; color: var(--muted); }
+@media (max-width: 860px) { .bonus { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 460px) { .bonus article { grid-template-columns: 6rem minmax(0, 1fr); } }
+
+/* oferta */
+.offer { background: var(--rubric-soft); }
+.ledger { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); max-width: 44rem; margin: 2.4rem auto 0; }
+.ledger .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; padding: 1rem 1.4rem; border-bottom: 1px solid var(--line); align-items: baseline; }
+.ledger .row b { font-weight: 600; }
+.ledger .row span { display: block; font-size: .9rem; color: var(--muted); }
+.ledger .v { font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.ledger .total { background: var(--paper); }
+.ledger .total .v { text-decoration: line-through; text-decoration-color: var(--rubric); }
+.ledger .price { padding: 1.6rem 1.4rem 1.8rem; text-align: center; display: grid; gap: .8rem; justify-items: center; }
+.ledger .price .now { font-family: var(--display); font-size: clamp(3.2rem, 9vw, 4.4rem); font-weight: 700; line-height: 1; color: var(--rubric); font-variant-numeric: lining-nums; }
+.ledger .price .now small { font-size: .35em; font-weight: 600; vertical-align: .9em; margin-right: .2rem; }
+.ledger .price p { font-size: .95rem; color: var(--muted); max-width: 30rem; }
+.ledger .buy { width: 100%; max-width: 26rem; font-size: 1.12rem; padding: 1.1rem 1.4rem; }
+
+/* garantia */
+.seal { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2rem; align-items: center; max-width: 52rem; }
+.seal .mark { width: 8.5rem; aspect-ratio: 1; border-radius: 50%; border: 2px solid var(--rubric); display: grid; place-items: center; text-align: center; color: var(--rubric); position: relative; }
+.seal .mark::before { content: ""; position: absolute; inset: 6px; border-radius: 50%; border: 1px solid var(--rubric); }
+.seal .mark b { font-family: var(--display); font-size: 2.6rem; line-height: .9; display: block; }
+.seal .mark span { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; font-size: .8rem; }
+@media (max-width: 600px) { .seal { grid-template-columns: minmax(0, 1fr); } }
+
+/* para quem */
+.fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem; margin-top: 2rem; }
+.fit ul { list-style: none; padding: 0; margin: .8rem 0 0; display: grid; gap: .7rem; }
+.fit li { padding-left: 1.6rem; position: relative; }
+.fit .yes li::before { content: "✓"; position: absolute; left: 0; color: var(--rubric); font-weight: 600; }
+.fit .no li::before { content: "✕"; position: absolute; left: 0; color: var(--muted); }
+@media (max-width: 700px) { .fit { grid-template-columns: minmax(0, 1fr); } }
+
+/* tomás */
+.thomas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; max-width: 46rem; }
+.thomas blockquote { margin: 0; font-family: var(--display); font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.22; font-weight: 500; }
+.thomas .la { font-family: var(--rubrics); font-style: italic; color: var(--muted); font-size: 1.05rem; }
+.thomas cite { font-style: normal; font-size: .92rem; color: var(--muted); }
+
+/* faq */
+.faq { max-width: 46rem; margin-top: 1.8rem; border-top: 1px solid var(--line); }
+details { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; list-style: none; padding: 1.05rem 2rem 1.05rem 0; position: relative; font-weight: 600; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "℣. "; color: var(--rubric); font-family: var(--rubrics); font-weight: 500; }
+summary::after { content: "+"; position: absolute; right: .2rem; top: .9rem; color: var(--rubric); font-size: 1.3rem; font-weight: 400; }
+details[open] summary::after { content: "–"; }
+details p { padding: 0 0 1.1rem 0; color: var(--ink); }
+details p::before { content: "℟. "; color: var(--rubric); font-family: var(--rubrics); }
+
+/* final */
+.final { text-align: center; }
+.final .stack { justify-items: center; }
+.ps { max-width: 40rem; margin: 2.6rem auto 0; text-align: left; font-size: 1rem; border-left: 2px solid var(--rubric); padding-left: 1.1rem; }
+footer { border-top: 1px solid var(--line); padding-block: 2.2rem 3rem; font-size: .88rem; color: var(--muted); }
+footer .wrap { display: grid; gap: .6rem; }
+</style>
+<style>
+.isca { padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 7vw, 5rem); border-top: 0; }
+.isca .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .isca .wrap { grid-template-columns: minmax(0, 1fr); } .isca .shot { order: -1; } }
+.isca h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); line-height: 1; }
+.isca .shot img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.isca ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .55rem; }
+.isca li { padding-left: 1.5rem; position: relative; }
+.isca li::before { content: "✠"; position: absolute; left: 0; color: var(--rubric); font-size: .9rem; top: .15rem; }
+form { display: grid; gap: .8rem; background: var(--card); border: 1px solid var(--line); padding: 1.3rem; box-shadow: var(--shadow); }
+label { display: grid; gap: .3rem; font-size: .92rem; color: var(--muted); }
+input { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); padding: .8rem .9rem; border-radius: 3px; }
+input:focus-visible { outline: 2px solid var(--rubric); outline-offset: 1px; }
+form .buy { border: 0; cursor: pointer; width: 100%; }
+.fine { font-size: .82rem; color: var(--muted); }
+.err { color: var(--rubric); font-size: .9rem; }
+.done { display: grid; gap: 1rem; background: var(--card); border: 1px solid var(--line); padding: 1.4rem; box-shadow: var(--shadow); }
+.next { margin-top: 2.4rem; border-top: 1px solid var(--line); padding-top: 2rem; display: grid; gap: 1rem; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="../">O Essencial <b>da</b> Bíblia</a>
+    <span class="rub" style="white-space:nowrap">Presente gratuito</span>
+  </div>
+</header>
+
+<main>
+  <section class="isca">
+    <div class="wrap">
+      <div class="stack">
+        <div class="rub">Já se perdeu tentando ler a Bíblia?</div>
+        <h1>A Bíblia inteira em uma única página.</h1>
+        <p class="lead">Um mapa gratuito com os 14 movimentos do Antigo Testamento e os 8 do Novo, numa linha do tempo. Antes de abrir qualquer livro da Bíblia, você vai saber onde ele está na história.</p>
+        <ul>
+          <li>Da Criação à Espera do Messias, e da Encarnação ao Apocalipse.</li>
+          <li>Em que época falou cada profeta, e onde entram os Salmos e os livros de sabedoria.</li>
+          <li>Os 400 anos entre os Testamentos, em uma linha.</li>
+          <li>PDF em formato A3: imprima e deixe ao lado da Bíblia.</li>
+        </ul>
+
+        <form id="form-mapa" novalidate>
+          <label for="nome">Seu primeiro nome<input id="nome" name="nome" autocomplete="given-name" required></label>
+          <label for="email">Seu melhor e-mail<input id="email" name="email" type="email" autocomplete="email" required></label>
+          <button class="buy" type="submit" id="enviar">Quero o mapa grátis</button>
+          <p class="err" id="erro" hidden></p>
+          <p class="fine">Você recebe o mapa agora, nesta página. Também poderá receber por e-mail conteúdos sobre a Bíblia e o lançamento do livro. Para sair da lista, basta um clique.</p>
+        </form>
+
+        <div class="done" id="pronto" hidden>
+          <div class="rub">Pronto, <span id="quem">o mapa é seu</span>!</div>
+          <h3>Baixe o seu mapa</h3>
+          <p>Imprima em A3, se puder. Em A4 também fica legível.</p>
+          <a class="buy" href="a-biblia-em-uma-pagina.pdf" target="_blank" rel="noopener">Baixar “A Bíblia em uma página” (PDF)</a>
+        </div>
+      </div>
+      <div class="shot"><img src="../assets/img/mapa-gratis.jpg" alt="Prévia do mapa A Bíblia em uma página, com os 14 movimentos do Antigo Testamento e os 8 do Novo" width="1100" height="778"></div>
+    </div>
+    <div class="wrap">
+      <div class="next" id="proximo">
+        <div class="rub">O próximo passo</div>
+        <h2>O mapa mostra o caminho. O livro percorre com você.</h2>
+        <p class="prose"><i>O Essencial da Bíblia</i> explica cada um desses movimentos e traz os textos completos em português e latim, com São Tomás de Aquino como guia e um plano de 8 semanas.<span class="only-promo"> Na promoção de lançamento sai por R$ 47, até o contador zerar: <span class="cd" data-countdown>3 dias</span>.</span></p>
+        <div><a class="ghost" href="../#oferta">Conhecer o livro</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>O Essencial da Bíblia · organização de Michael Castilho · 2026</span>
+  </div>
+</footer>
+
+<script>
+  /* ==== CONFIGURAÇÃO ==== */
+  // Endereço que recebe os cadastros (ex.: formulário do MailerLite, Brevo, Formspree ou Google Forms).
+  // Enquanto estiver vazio, o mapa é liberado sem guardar o cadastro.
+  const FORM_ENDPOINT = '';
+  const FIELD = { nome: 'nome', email: 'email' };   // nomes dos campos que o serviço espera
+  const PROMO_END = '2026-11-04T23:59:59-03:00';    // o mesmo prazo da página de vendas
+  /* ====================== */
+
+  const form = document.getElementById('form-mapa');
+  const erro = document.getElementById('erro');
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const nome = form.nome.value.trim(), email = form.email.value.trim();
+    if (!nome || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      erro.textContent = 'Preencha o seu nome e um e-mail válido para receber o mapa.';
+      erro.hidden = false; return;
+    }
+    erro.hidden = true;
+    const btn = document.getElementById('enviar');
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    if (FORM_ENDPOINT) {
+      const data = new FormData(); data.append(FIELD.nome, nome); data.append(FIELD.email, email);
+      try { await fetch(FORM_ENDPOINT, { method: 'POST', body: data, mode: 'no-cors' }); } catch (e) {}
+    }
+    document.getElementById('quem').textContent = nome + ', o mapa é seu';
+    form.hidden = true;
+    document.getElementById('pronto').hidden = false;
+  });
+
+  const end = new Date(PROMO_END).getTime();
+  const two = n => String(n).padStart(2, '0');
+  function tick() {
+    const ms = end - Date.now();
+    document.documentElement.dataset.promo = ms > 0 ? 'on' : 'off';
+    const t = Math.max(0, Math.floor(ms / 1000));
+    const d = Math.floor(t / 86400), h = Math.floor(t % 86400 / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
+    document.querySelectorAll('[data-countdown]').forEach(el => el.textContent = (d ? d + 'd ' : '') + two(h) + 'h ' + two(m) + 'm ' + two(s) + 's');
+  }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>

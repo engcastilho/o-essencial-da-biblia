@@ -1,3 +1,4 @@
 *.pdf
+!mapa/a-biblia-em-uma-pagina.pdf
 *.docx
 .DS_Store
