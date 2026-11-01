@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>O Essencial da Bíblia</title>
+<meta name="description" content="Entenda a Bíblia inteira em 8 semanas: os textos essenciais em português e latim, com São Tomás de Aquino como guia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: a missal-like reading column with red rubric labels in the margin; one wide band for the offer. */
+:root {
+  --paper: #FAF8F5; --card: #FFFFFF; --ink: #1C1715; --muted: #675E57; --line: #E4DDD4;
+  --rubric: #8C2020; --rubric-ink: #FFFFFF; --rubric-soft: #F4E9E5;
+  --cloth: #5B1818; --cloth-2: #3F0F0F; --gilt: #C7A55B; --shadow: 0 18px 40px -18px rgba(40, 18, 12, .35);
+  --display: "Cormorant Garamond", "Palatino Linotype", Palatino, Georgia, serif;
+  --body: "Source Serif 4", "Palatino Linotype", Georgia, serif;
+  --rubrics: "EB Garamond", "Palatino Linotype", Georgia, serif;
+  --measure: 40rem;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #131010; --card: #1B1716; --ink: #ECE5DE; --muted: #A79C94; --line: #2F2826;
+  --rubric: #E38D7E; --rubric-ink: #1A0E0C; --rubric-soft: #2A1A18;
+  --cloth: #561616; --cloth-2: #380D0D; --gilt: #D6B66C; --shadow: 0 18px 40px -18px rgba(0, 0, 0, .7); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #131010; --card: #1B1716; --ink: #ECE5DE; --muted: #A79C94; --line: #2F2826;
+  --rubric: #E38D7E; --rubric-ink: #1A0E0C; --rubric-soft: #2A1A18;
+  --cloth: #561616; --cloth-2: #380D0D; --gilt: #D6B66C; --shadow: 0 18px 40px -18px rgba(0, 0, 0, .7); color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+img { max-width: 100%; }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+a { color: var(--rubric); }
+.wrap { max-width: 68rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -.005em; }
+h2 { font-size: clamp(2rem, 4.2vw, 2.9rem); }
+h3 { font-size: 1.55rem; }
+p { margin: 0; }
+.rub { font-family: var(--rubrics); font-variant: small-caps; font-feature-settings: "smcp", "c2sc"; letter-spacing: .12em; color: var(--rubric); font-size: .95rem; }
+.lead { font-size: 1.2rem; line-height: 1.6; color: var(--ink); }
+.muted { color: var(--muted); }
+.stack { display: grid; gap: 1.1rem; }
+.prose { max-width: var(--measure); }
+section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+
+/* botão */
+.buy { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; background: var(--rubric); color: var(--rubric-ink);
+  font: 600 1.05rem/1.2 var(--body); text-decoration: none; padding: 1rem 1.5rem; border-radius: 3px; transition: transform .15s ease, filter .15s ease; }
+.buy:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.buy:focus-visible, .ghost:focus-visible, summary:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+.buy small { font-weight: 400; opacity: .85; }
+.ghost { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rubric); padding-bottom: 1px; }
+.trust { font-size: .9rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; }
+.trust span::before { content: "✠ "; color: var(--rubric); }
+
+/* topo */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .6rem; }
+.brand { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; color: var(--ink); text-decoration: none; font-size: 1.02rem; white-space: nowrap; }
+.brand b { color: var(--rubric); font-weight: 500; }
+.bar .buy { padding: .55rem 1rem; font-size: .95rem; white-space: nowrap; flex: none; }
+.bar nav { display: flex; gap: 1.4rem; font-size: .95rem; }
+.bar nav a { color: var(--muted); text-decoration: none; } .bar nav a:hover { color: var(--ink); }
+@media (max-width: 760px) { .bar nav { display: none; } }
+
+/* hero */
+.hero { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem); border-top: 0; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); line-height: 1.0; }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--rubric); }
+.hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; margin-top: .4rem; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } }
+
+/* livro (capa tipográfica) */
+.book-stage { display: grid; justify-items: center; gap: 1.4rem; }
+.book { width: min(17rem, 72vw); aspect-ratio: 17 / 24; position: relative; transform: perspective(1200px) rotateY(-14deg) rotateX(2deg);
+  transform-origin: left center; border-radius: 2px 6px 6px 2px; box-shadow: var(--shadow), 18px 22px 30px -16px rgba(0,0,0,.35);
+  background: linear-gradient(90deg, var(--cloth-2) 0 4%, rgba(255,255,255,.08) 4.4%, var(--cloth) 5% 100%); color: #F1E6D4;
+  display: grid; grid-template-rows: auto 1fr auto; padding: 12% 11% 10% 15%; text-align: center; }
+.book::after { content: ""; position: absolute; inset: 5% 5% 5% 9%; border: 1px solid color-mix(in srgb, var(--gilt) 75%, transparent); pointer-events: none; }
+.book .k { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .2em; font-size: .72rem; color: var(--gilt); }
+.book .t { align-self: center; font-family: var(--display); font-weight: 600; font-size: clamp(1.55rem, 4.2vw, 2rem); line-height: 1.02; }
+.book .t span { display: block; font-size: .5em; font-weight: 500; font-style: italic; margin-top: .7rem; color: #E3D3B8; }
+.book .t i { display: block; width: 2.4rem; height: 1px; background: var(--gilt); margin: .9rem auto 0; }
+.book .a { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; font-size: .7rem; color: #E3D3B8; }
+.verse { width: min(24rem, 100%); background: var(--card); border: 1px solid var(--line); padding: .9rem 1rem; display: grid; grid-template-columns: 1.2rem 1fr 1fr; gap: .2rem .8rem; font-size: .9rem; line-height: 1.45; }
+.verse .n { color: var(--rubric); font-weight: 600; font-size: .8rem; padding-top: .1rem; }
+.verse .la { color: var(--muted); font-style: italic; }
+.verse .h { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: .35rem; margin-bottom: .2rem; }
+.verse .h .rub { font-size: .8rem; }
+
+/* dor */
+.pains { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 2rem; }
+.pains div { background: var(--paper); padding: 1.2rem 1.3rem; font-size: 1.02rem; }
+.pains b { display: block; font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin-bottom: .2rem; }
+@media (max-width: 640px) { .pains { grid-template-columns: minmax(0, 1fr); } }
+.turn { margin-top: 2rem; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 1.9rem); line-height: 1.25; max-width: 44rem; font-weight: 500; }
+
+/* método */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
+.crit { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.crit div { display: grid; grid-template-columns: 2.4rem 1fr; gap: .8rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.crit .roman { font-family: var(--display); font-size: 1.6rem; color: var(--rubric); line-height: 1; }
+.crit b { font-weight: 600; }
+.figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1.2rem; margin-top: 2.2rem; }
+.figures div { border-left: 2px solid var(--rubric); padding-left: .9rem; }
+.figures strong { display: block; font-family: var(--display); font-size: 2.6rem; line-height: 1; font-weight: 600; font-variant-numeric: lining-nums; }
+.figures span { font-size: .93rem; color: var(--muted); }
+
+/* amostras */
+.pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; margin-top: 2.4rem; }
+.pages figure { margin: 0; display: grid; gap: .7rem; }
+.pages img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.pages figcaption { font-size: .93rem; color: var(--muted); }
+.pages figcaption b { color: var(--ink); font-weight: 600; }
+@media (max-width: 860px) { .pages { grid-template-columns: minmax(0, 1fr); max-width: 26rem; } }
+.parts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.4rem; margin-top: 2.6rem; }
+.parts .rub { display: block; margin-bottom: .2rem; }
+.parts h3 { margin-bottom: .4rem; }
+.parts p { font-size: .98rem; color: var(--muted); }
+@media (max-width: 700px) { .parts { grid-template-columns: minmax(0, 1fr); } }
+
+/* plano */
+.weeks { margin-top: 2.2rem; border-top: 1px solid var(--line); }
+.week { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) minmax(0, 1.3fr); gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.week .rub { font-size: .9rem; }
+.week .f { font-family: var(--display); font-size: 1.3rem; font-weight: 600; line-height: 1.2; }
+.week .r { font-size: .93rem; color: var(--muted); }
+.testament { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; color: var(--muted); font-size: .85rem; padding-top: 1.4rem; }
+@media (max-width: 700px) { .week { grid-template-columns: minmax(0, 1fr); gap: .15rem; } }
+.method { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.method div { background: var(--card); border: 1px solid var(--line); padding: 1rem; font-size: .95rem; }
+.method b { display: block; font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
+.method span { color: var(--rubric); font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .1em; font-size: .85rem; }
+@media (max-width: 760px) { .method { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* bônus */
+.bonus { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 2.6rem; margin-top: 2.6rem; }
+.bonus article { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+.bonus img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.bonus article.wide img { aspect-ratio: auto; }
+.bonus h3 { font-size: 1.4rem; margin: .15rem 0 .35rem; }
+.bonus p { font-size: .97rem; color: var(--muted); }
+@media (max-width: 860px) { .bonus { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 460px) { .bonus article { grid-template-columns: 6rem minmax(0, 1fr); } }
+
+/* oferta */
+.offer { background: var(--rubric-soft); }
+.ledger { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); max-width: 44rem; margin: 2.4rem auto 0; }
+.ledger .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; padding: 1rem 1.4rem; border-bottom: 1px solid var(--line); align-items: baseline; }
+.ledger .row b { font-weight: 600; }
+.ledger .row span { display: block; font-size: .9rem; color: var(--muted); }
+.ledger .v { font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.ledger .total { background: var(--paper); }
+.ledger .total .v { text-decoration: line-through; text-decoration-color: var(--rubric); }
+.ledger .price { padding: 1.6rem 1.4rem 1.8rem; text-align: center; display: grid; gap: .8rem; justify-items: center; }
+.ledger .price .now { font-family: var(--display); font-size: clamp(3.2rem, 9vw, 4.4rem); font-weight: 700; line-height: 1; color: var(--rubric); font-variant-numeric: lining-nums; }
+.ledger .price .now small { font-size: .35em; font-weight: 600; vertical-align: .9em; margin-right: .2rem; }
+.ledger .price p { font-size: .95rem; color: var(--muted); max-width: 30rem; }
+.ledger .buy { width: 100%; max-width: 26rem; font-size: 1.12rem; padding: 1.1rem 1.4rem; }
+
+/* garantia */
+.seal { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2rem; align-items: center; max-width: 52rem; }
+.seal .mark { width: 8.5rem; aspect-ratio: 1; border-radius: 50%; border: 2px solid var(--rubric); display: grid; place-items: center; text-align: center; color: var(--rubric); position: relative; }
+.seal .mark::before { content: ""; position: absolute; inset: 6px; border-radius: 50%; border: 1px solid var(--rubric); }
+.seal .mark b { font-family: var(--display); font-size: 2.6rem; line-height: .9; display: block; }
+.seal .mark span { font-family: var(--rubrics); font-variant: small-caps; letter-spacing: .14em; font-size: .8rem; }
+@media (max-width: 600px) { .seal { grid-template-columns: minmax(0, 1fr); } }
+
+/* para quem */
+.fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem; margin-top: 2rem; }
+.fit ul { list-style: none; padding: 0; margin: .8rem 0 0; display: grid; gap: .7rem; }
+.fit li { padding-left: 1.6rem; position: relative; }
+.fit .yes li::before { content: "✓"; position: absolute; left: 0; color: var(--rubric); font-weight: 600; }
+.fit .no li::before { content: "✕"; position: absolute; left: 0; color: var(--muted); }
+@media (max-width: 700px) { .fit { grid-template-columns: minmax(0, 1fr); } }
+
+/* tomás */
+.thomas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; max-width: 46rem; }
+.thomas blockquote { margin: 0; font-family: var(--display); font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.22; font-weight: 500; }
+.thomas .la { font-family: var(--rubrics); font-style: italic; color: var(--muted); font-size: 1.05rem; }
+.thomas cite { font-style: normal; font-size: .92rem; color: var(--muted); }
+
+/* faq */
+.faq { max-width: 46rem; margin-top: 1.8rem; border-top: 1px solid var(--line); }
+details { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; list-style: none; padding: 1.05rem 2rem 1.05rem 0; position: relative; font-weight: 600; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "℣. "; color: var(--rubric); font-family: var(--rubrics); font-weight: 500; }
+summary::after { content: "+"; position: absolute; right: .2rem; top: .9rem; color: var(--rubric); font-size: 1.3rem; font-weight: 400; }
+details[open] summary::after { content: "–"; }
+details p { padding: 0 0 1.1rem 0; color: var(--ink); }
+details p::before { content: "℟. "; color: var(--rubric); font-family: var(--rubrics); }
+
+/* final */
+.final { text-align: center; }
+.final .stack { justify-items: center; }
+.ps { max-width: 40rem; margin: 2.6rem auto 0; text-align: left; font-size: 1rem; border-left: 2px solid var(--rubric); padding-left: 1.1rem; }
+footer { border-top: 1px solid var(--line); padding-block: 2.2rem 3rem; font-size: .88rem; color: var(--muted); }
+footer .wrap { display: grid; gap: .6rem; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#topo">O Essencial <b>da</b> Bíblia</a>
+    <nav aria-label="Seções"><a href="#metodo">O método</a><a href="#conteudo">O livro</a><a href="#plano">O plano</a><a href="#faq">Dúvidas</a></nav>
+    <a class="buy" href="#oferta">Quero o livro</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap">
+      <div class="stack">
+        <div class="rub">Método 80/20 da Bíblia</div>
+        <h1>Entenda a Bíblia inteira em 8 semanas, <em>sem precisar ler os 73 livros.</em></h1>
+        <p class="lead prose">Um livro que separa os textos que carregam a história inteira da Escritura e os explica um a um, com o texto bíblico em português e latim, verso a verso, e São Tomás de Aquino como guia. Vinte a trinta minutos por dia.</p>
+        <div class="actions">
+          <a class="buy" href="#oferta">Quero começar <small>· R$ 47</small></a>
+          <a class="ghost" href="#conteudo">Ver páginas do livro</a>
+        </div>
+        <div class="trust"><span>701 páginas em PDF</span><span>4 bônus para imprimir</span><span>Garantia de 30 dias</span></div>
+      </div>
+      <div class="book-stage" aria-hidden="true">
+        <div class="book">
+          <div class="k">Método 80/20</div>
+          <div class="t">O Essencial da Bíblia<span>o 80/20 do Antigo e do Novo Testamento</span><i></i></div>
+          <div class="a">Figueiredo · Vulgata · São Tomás</div>
+        </div>
+        <div class="verse">
+          <div class="h"><span class="rub">Jo 1,1</span><span class="rub">Português · Latim</span></div>
+          <span class="n">1</span><span>No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus.</span><span class="la">In principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dor">
+    <div class="wrap">
+      <div class="stack prose">
+        <div class="rub">Você já passou por isso?</div>
+        <h2>A vontade de ler a Bíblia existe. O que falta é o mapa.</h2>
+      </div>
+      <div class="pains">
+        <div><b>Começou pelo Gênesis e parou no Levítico.</b>Leis de sacrifício, genealogias e medidas do Templo, e a leitura morreu na terceira semana.</div>
+        <div><b>Lê versículos soltos.</b>Cada trecho parece bonito, mas você não enxerga como um se liga ao outro.</div>
+        <div><b>Ouve as leituras da Missa sem pegar o fio.</b>Por que esta primeira leitura com este Evangelho? Ninguém nunca explicou.</div>
+        <div><b>Quer explicar a fé e não sabe por onde começar.</b>Na catequese, no grupo de oração ou em casa, falta segurança para responder.</div>
+      </div>
+      <p class="turn">O problema não está em você. A Bíblia é uma biblioteca de 73 livros, escrita ao longo de mais de mil anos, e ninguém aprende uma biblioteca começando pela primeira prateleira.</p>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="wrap split">
+      <div class="stack">
+        <div class="rub">O método</div>
+        <h2>Poucos textos carregam a maior parte da história.</h2>
+        <p class="prose">O economista Vilfredo Pareto observou que poucas causas costumam produzir a maior parte dos efeitos. Na Bíblia acontece algo parecido: alguns livros funcionam como vigas mestras. Se forem retirados, a casa cai. Os outros só fazem sentido quando a estrutura já está de pé.</p>
+        <p class="prose">Este livro identifica essas vigas e mostra como elas se ligam. Você ganha o mapa antes de percorrer o território. Depois, qualquer outro livro da Bíblia encontra o seu lugar.</p>
+        <div class="figures">
+          <div><strong>14 + 8</strong><span>movimentos que contam a história do Antigo e do Novo Testamento</span></div>
+          <div><strong>23</strong><span>pares de figuras do Antigo cumpridas no Novo</span></div>
+          <div><strong>69</strong><span>citações de São Tomás de Aquino, em latim e português</span></div>
+          <div><strong>8</strong><span>semanas de plano, com 20 a 30 minutos por dia</span></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="rub">Os três critérios de seleção</div>
+        <div class="crit">
+          <div><span class="roman">I</span><p><b>Espinha narrativa.</b> O texto sustenta o enredo da salvação? Sem ele, a história fica com um buraco que nenhum outro livro preenche?</p></div>
+          <div><span class="roman">II</span><p><b>Peso de citação.</b> O texto é citado com frequência pelo próprio Novo Testamento, pela liturgia e pelo Catecismo?</p></div>
+          <div><span class="roman">III</span><p><b>Fundamento doutrinal.</b> Dele nascem verdades centrais da fé: criação, pecado original, aliança, encarnação, redenção, Igreja, sacramentos, ressurreição?</p></div>
+        </div>
+        <p class="muted">Um livro que passa pelos três filtros entra na lista. Um livro que passa por dois é considerado caso a caso. A leitura segue a regra da Igreja: unidade da Escritura, Tradição viva e analogia da fé.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="conteudo">
+    <div class="wrap">
+      <div class="stack prose">
+        <div class="rub">Por dentro do livro</div>
+        <h2>Cada passagem vem com o texto inteiro, em duas colunas.</h2>
+        <p>Você não precisa abrir outra Bíblia. O texto português é a tradução clássica do Pe. Antônio Pereira de Figueiredo, com a ortografia atualizada, lado a lado com a Vulgata latina, da qual ele traduziu. Em cada capítulo, São Tomás de Aquino aparece no original latino e em português.</p>
+      </div>
+      <div class="pages">
+        <figure><img src="assets/img/pagina-genesis.jpg" alt="Página do livro com Gênesis 12 e 15 em duas colunas, português e latim" width="640" height="904">
+          <figcaption><b>O texto bíblico verso a verso.</b> Gênesis 12 e 15, com a explicação de cada passagem antes do texto.</figcaption></figure>
+        <figure><img src="assets/img/pagina-sao-tomas.jpg" alt="Página do livro com a seção O olhar de São Tomás" width="640" height="904">
+          <figcaption><b>O olhar de São Tomás.</b> O latim original da Suma Teológica, a tradução e a referência exata.</figcaption></figure>
+        <figure><img src="assets/img/pagina-salmos.jpg" alt="Abertura do capítulo 7, Salmos: a oração de Cristo e da Igreja" width="640" height="904">
+          <figcaption><b>Diagramação de livro de estudo.</b> 21 capítulos, cada um com o porquê, as passagens-chave e a aplicação.</figcaption></figure>
+      </div>
+      <div class="parts">
+        <div><span class="rub">Parte I</span><h3>O Antigo Testamento</h3><p>A espinha narrativa em quatorze movimentos. Gênesis, Êxodo, Deuteronômio, Samuel, Salmos, Isaías, Jeremias, Ezequiel, Daniel e Sabedoria, e os sete temas que carregam o AT.</p></div>
+        <div><span class="rub">Parte II</span><h3>O Novo Testamento</h3><p>O mundo que esperava o Messias e os oito movimentos do NT. Mateus, Lucas, João, Atos, Romanos, Coríntios, Filipenses, Hebreus e Apocalipse.</p></div>
+        <div><span class="rub">Parte III</span><h3>A unidade e a prática</h3><p>A tabela que une os dois Testamentos, o plano de oito semanas com o método de cada dia e a conclusão: o essencial em uma página.</p></div>
+        <div><span class="rub">Parte IV</span><h3>As leituras completas do plano</h3><p>Todos os textos das oito semanas, em português e latim. A Semana 5 traz o Evangelho de Lucas inteiro. Mais dois índices: passagens-chave e citações de São Tomás.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plano">
+    <div class="wrap">
+      <div class="stack prose">
+        <div class="rub">O plano de 8 semanas</div>
+        <h2>Do Gênesis ao Apocalipse em 56 dias.</h2>
+        <p>Cinco dias de leitura por semana, um de revisão e o domingo para a Missa. As quatro primeiras semanas percorrem o Antigo Testamento; as quatro últimas, o Novo.</p>
+      </div>
+      <div class="weeks">
+        <div class="testament">Antigo Testamento</div>
+        <div class="week"><span class="rub">Semana 1</span><span class="f">Criação, Queda, promessa e libertação</span><span class="r">Gn 1–3; 12; 15; 22; Êx 1–15</span></div>
+        <div class="week"><span class="rub">Semana 2</span><span class="f">Aliança, Lei e o reino de Davi</span><span class="r">Êx 16; 19–20; 24; 32; Dt 6–8; 30; 2Sm 7; 11–12</span></div>
+        <div class="week"><span class="rub">Semana 3</span><span class="f">Oração e o Messias anunciado</span><span class="r">Sl 1; 2; 22; 23; 51; 110; Is 6–11; 40; 52,13–53,12</span></div>
+        <div class="week"><span class="rub">Semana 4</span><span class="f">Nova Aliança e a espera</span><span class="r">Jr 31; Ez 34; 36–37; Dn 7; Sb 2–3</span></div>
+        <div class="testament">Novo Testamento</div>
+        <div class="week"><span class="rub">Semana 5</span><span class="f">A vida de Jesus contada em ordem</span><span class="r">O Evangelho de Lucas inteiro</span></div>
+        <div class="week"><span class="rub">Semana 6</span><span class="f">O Reino, a Igreja e o Pão da Vida</span><span class="r">Mt 5–7; 16; 28; Jo 1–6</span></div>
+        <div class="week"><span class="rub">Semana 7</span><span class="f">Paixão, Ressurreição e Pentecostes</span><span class="r">Jo 13–21; At 1–2; 9–10; 15</span></div>
+        <div class="week"><span class="rub">Semana 8</span><span class="f">O Evangelho explicado e a vitória final</span><span class="r">Rm 5–8; 1Cor 11; 13; 15; Fl 2; Hb 8–10; Ap 21–22</span></div>
+      </div>
+      <div class="method">
+        <div><span>2 min</span><b>Rezar</b>Uma breve oração ao Espírito Santo, que inspirou o texto.</div>
+        <div><span>10–15 min</span><b>Ler</b>O trecho do dia, em voz baixa e sem pressa.</div>
+        <div><span>5 min</span><b>Anotar</b>Um fato, uma ligação com Cristo e uma frase que tocou.</div>
+        <div><span>3–5 min</span><b>Rezar de novo</b>Transformar a frase anotada em oração.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bonus">
+    <div class="wrap">
+      <div class="stack prose">
+        <div class="rub">Quatro bônus para não desistir no meio</div>
+        <h2>O que trava quem começa a ler a Bíblia, resolvido antes de travar.</h2>
+      </div>
+      <div class="bonus">
+        <article><img src="assets/img/bonus-1-plano.jpg" alt="Página do plano de 56 dias com caixinhas para marcar" width="520" height="735">
+          <div><div class="rub">Bônus 1 · contra o “vou me perder”</div><h3>Plano de leitura de 56 dias</h3><p>Cada dia com a leitura, a página do livro onde está o texto e uma caixinha para marcar. Inclui o método diário e um caderno semanal de anotações para imprimir.</p></div></article>
+        <article><img src="assets/img/bonus-2-mapa.jpg" alt="Mapa da espinha narrativa da Bíblia em uma página" width="900" height="636">
+          <div><div class="rub">Bônus 2 · contra o “não vejo o todo”</div><h3>A Bíblia em uma página</h3><p>Os 14 movimentos do Antigo Testamento e os 8 do Novo numa linha do tempo, com os profetas de cada época. Formato A3, para pendurar ao lado da mesa de estudo.</p></div></article>
+        <article><img src="assets/img/bonus-3-tipologia.jpg" alt="Pôster com os pares de figuras do Antigo e do Novo Testamento" width="520" height="735">
+          <div><div class="rub">Bônus 3 · contra o “não vejo Cristo no AT”</div><h3>A chave que une os dois Testamentos</h3><p>Os 23 pares de figura e cumprimento, de Adão e Cristo à Jerusalém celeste, cada um com o texto que liga os dois. Pôster A3.</p></div></article>
+        <article><img src="assets/img/bonus-4-roteiro.jpg" alt="Página do roteiro de grupo de estudo, encontro 1" width="520" height="735">
+          <div><div class="rub">Bônus 4 · contra o “sozinho eu desisto”</div><h3>Roteiro para grupos de estudo</h3><p>Oito encontros prontos para paróquia, grupo de oração, catequese ou família: oração de abertura, perguntas para conversar, São Tomás, a Palavra para rezar e um compromisso por semana.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="para-quem">
+    <div class="wrap">
+      <div class="stack prose">
+        <div class="rub">Para quem é</div>
+        <h2>Feito para o católico leigo que quer ler a Bíblia com a Igreja.</h2>
+      </div>
+      <div class="fit">
+        <div class="yes"><h3>É para você se</h3><ul>
+          <li>Já tentou ler a Bíblia e não passou dos primeiros livros.</li>
+          <li>Quer entender a ligação entre o Antigo e o Novo Testamento.</li>
+          <li>É catequista, ministro ou participa de grupo de oração e precisa explicar com segurança.</li>
+          <li>Gosta de estudar com profundidade e quer conhecer São Tomás sem precisar de uma faculdade de teologia.</li>
+          <li>Tem 20 a 30 minutos por dia e quer usá-los bem.</li></ul></div>
+        <div class="no"><h3>Não é para você se</h3><ul>
+          <li>Procura um comentário acadêmico versículo por versículo de toda a Bíblia.</li>
+          <li>Quer uma leitura que dispense a Igreja, a Tradição e o Catecismo.</li>
+          <li>Espera entender a Bíblia sem ler nada: o livro guia, mas a leitura é sua.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta" class="offer">
+    <div class="wrap">
+      <div class="stack prose" style="margin-inline:auto;text-align:center;justify-items:center">
+        <div class="rub">Tudo o que você recebe</div>
+        <h2>O livro, o plano e os bônus, num único acesso.</h2>
+      </div>
+      <div class="ledger">
+        <div class="row"><div><b>O Essencial da Bíblia</b><span>701 páginas em PDF · 21 capítulos · texto em português e latim · 69 citações de São Tomás</span></div><div class="v">R$ 97</div></div>
+        <div class="row"><div><b>Bônus 1 · Plano de leitura de 56 dias</b><span>com caderno semanal de anotações</span></div><div class="v">R$ 27</div></div>
+        <div class="row"><div><b>Bônus 2 · A Bíblia em uma página</b><span>linha do tempo em A3</span></div><div class="v">R$ 27</div></div>
+        <div class="row"><div><b>Bônus 3 · A chave que une os dois Testamentos</b><span>pôster da tipologia em A3</span></div><div class="v">R$ 27</div></div>
+        <div class="row"><div><b>Bônus 4 · Roteiro para grupos de estudo</b><span>oito encontros prontos</span></div><div class="v">R$ 47</div></div>
+        <div class="row total"><div><b>Valor somado</b></div><div class="v">R$ 225</div></div>
+        <div class="price">
+          <div class="rub">Preço de lançamento</div>
+          <div class="now"><small>R$</small>47</div>
+          <p>Menos de R$ 0,85 por dia de leitura do plano. Depois do lançamento, o livro com os bônus passa a custar R$ 97.</p>
+          <a class="buy" href="#oferta">Quero o livro e os 4 bônus</a>
+          <div class="trust" style="justify-content:center"><span>Acesso imediato</span><span>Leia no celular ou imprima</span><span>Garantia de 30 dias</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="garantia">
+    <div class="wrap">
+      <div class="seal">
+        <div class="mark" aria-hidden="true"><div><b>30</b><span>dias</span></div></div>
+        <div class="stack">
+          <div class="rub">Garantia</div>
+          <h2>Faça as duas primeiras semanas. Se não ajudar, o dinheiro volta.</h2>
+          <p class="prose">Leia, siga o plano das semanas 1 e 2 e use os bônus. Se você não sentir que entende a Bíblia melhor do que antes, peça o reembolso em até 30 dias e devolvemos 100% do valor. Basta uma mensagem. O risco fica todo do nosso lado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tomas">
+    <div class="wrap">
+      <div class="thomas">
+        <div class="rub">Por que São Tomás</div>
+        <blockquote>“A palavra da Sagrada Escritura ensina com firmeza, pela sua verdade eterna; deleita com suavidade, pela sua utilidade; move com eficácia, pela sua autoridade.”</blockquote>
+        <div class="la">Docet enim firmiter aeterna sua veritate […] Delectat suaviter sua utilitate […] Flectit efficaciter sua auctoritate</div>
+        <cite>São Tomás de Aquino, Princípio “Hic est liber”, aula inaugural em Paris</cite>
+        <p class="prose">São Tomás foi, antes de tudo, mestre da Sagrada Escritura. Neste livro ele aparece onde ilumina o texto: por que o Messias não veio logo, por que Jesus quis ser tentado, por que o Salmo 22 fala da Paixão. Todos os textos latinos foram conferidos com o Corpus Thomisticum, e as traduções foram feitas para esta obra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="autor">
+    <div class="wrap split">
+      <div class="stack">
+        <div class="rub">Quem organizou</div>
+        <h2>Michael Castilho</h2>
+      </div>
+      <div class="stack prose">
+        <p>Católico praticante, de Rondônia. Organizou este livro a partir de uma pergunta simples: quais textos da Bíblia carregam a história inteira, e como lê-los com a Igreja?</p>
+        <p class="muted">As fontes estão todas indicadas no livro: a tradução do Pe. Antônio Pereira de Figueiredo, a Vulgata Clementina, o Catecismo da Igreja Católica, a Constituição Dei Verbum e as obras de São Tomás no Corpus Thomisticum.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="stack prose">
+        <div class="rub">Perguntas frequentes</div>
+        <h2>Antes de começar</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Nunca li a Bíblia. Consigo acompanhar?</summary><p>Sim. O livro foi escrito para quem está começando. Cada capítulo explica por que a passagem é essencial antes de mostrar o texto, e o plano diz exatamente o que ler em cada dia.</p></details>
+        <details><summary>Preciso comprar outra Bíblia?</summary><p>Não. Todas as passagens estudadas estão transcritas por inteiro no livro, em português e latim. A Parte IV traz todas as leituras do plano, incluindo o Evangelho de Lucas completo.</p></details>
+        <details><summary>É um livro católico?</summary><p>Sim. A seleção segue a Bíblia católica de 73 livros, a leitura acompanha o Catecismo e a Dei Verbum, e o guia teológico é São Tomás de Aquino. Os livros deuterocanônicos, como Sabedoria, estão incluídos.</p></details>
+        <details><summary>O livro tem aprovação eclesiástica (Imprimatur)?</summary><p>Não. É uma obra de estudo pessoal, não uma edição oficial da Igreja. O texto bíblico é a tradução de Figueiredo, usada por gerações de católicos de língua portuguesa, e as explicações remetem sempre ao Catecismo.</p></details>
+        <details><summary>Não sei latim. Isso atrapalha?</summary><p>Não atrapalha. O português está sempre ao lado. O latim é para quem quer ver a palavra original da Igreja, rezar com ela ou conferir uma expressão. Você pode ignorá-lo e ler só a coluna em português.</p></details>
+        <details><summary>Como eu recebo?</summary><p>Logo depois da confirmação do pagamento, você recebe o acesso para baixar o livro em PDF e os quatro bônus. Dá para ler no celular, no tablet ou no computador, e imprimir o que quiser.</p></details>
+        <details><summary>E se eu atrasar o plano?</summary><p>Retome do ponto em que parou. O plano foi pensado para cinco dias de leitura por semana, com folga no sábado e no domingo. Constância vale mais que perfeição.</p></details>
+        <details><summary>Posso usar com o meu grupo?</summary><p>Pode, e é o melhor jeito. O Bônus 4 traz oito encontros prontos. Cada participante precisa do seu próprio acesso ao livro para fazer as leituras da semana.</p></details>
+        <details><summary>Como funciona a garantia?</summary><p>Você tem 30 dias. Se, depois das duas primeiras semanas do plano, sentir que o livro não ajudou, peça o reembolso e devolvemos 100% do valor.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="stack">
+        <div class="rub">Comece hoje</div>
+        <h2>Daqui a oito semanas, você vai abrir a Bíblia sabendo onde está.</h2>
+        <p class="lead prose" style="margin-inline:auto">O livro, o plano de 56 dias e os quatro bônus, por R$ 47 no lançamento, com 30 dias de garantia.</p>
+        <a class="buy" href="#oferta">Quero o livro e os 4 bônus <small>· R$ 47</small></a>
+      </div>
+      <p class="ps"><b>P.S.</b> Se você leu até aqui, já sabe que quer entender a Bíblia. O que falta é um caminho com começo, meio e fim. São 20 a 30 minutos por dia, com tudo no mesmo lugar: o texto, a explicação, São Tomás e o plano. Se não ajudar nas duas primeiras semanas, você recebe o dinheiro de volta.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>O Essencial da Bíblia · organização de Michael Castilho · 2026</span>
+    <span>Texto bíblico: tradução do Pe. Antônio Pereira de Figueiredo e Vulgata Clementina, em domínio público. Textos de São Tomás de Aquino conferidos com o Corpus Thomisticum (Universidade de Navarra).</span>
+  </div>
+</footer>
+
+<script>
+  // Cole aqui o link do checkout (Hotmart, Kiwify etc.). Enquanto estiver vazio, os botões levam à oferta.
+  const CHECKOUT_URL = '';
+  if (CHECKOUT_URL) {
+    document.querySelectorAll('a.buy').forEach(a => { a.href = CHECKOUT_URL; a.target = '_blank'; a.rel = 'noopener'; });
+  }
+</script>
+
+</body>
+</html>
