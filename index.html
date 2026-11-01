@@ -193,7 +193,6 @@ section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--l
 .ledger .row span { display: block; font-size: .9rem; color: var(--muted); }
 .ledger .v { font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
 .ledger .total { background: var(--paper); }
-.ledger .total .v { text-decoration: line-through; text-decoration-color: var(--rubric); }
 .ledger .price { padding: 1.6rem 1.4rem 1.8rem; text-align: center; display: grid; gap: .8rem; justify-items: center; }
 .ledger .price .now { font-family: var(--display); font-size: clamp(3.2rem, 9vw, 4.4rem); font-weight: 700; line-height: 1; color: var(--rubric); font-variant-numeric: lining-nums; }
 .ledger .price .now small { font-size: .35em; font-weight: 600; vertical-align: .9em; margin-right: .2rem; }
@@ -245,8 +244,8 @@ footer .wrap { display: grid; gap: .6rem; }
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="#topo">O Essencial <b>da</b> Bíblia</a>
-    <span class="cdbox only-promo">Promoção termina em <span class="cd" data-countdown>3 dias</span></span>
-    <a class="buy" href="#oferta">Quero o livro · R$ <span data-price>47</span></a>
+
+    <a class="buy" href="#oferta">Quero o livro · R$ 47</a>
   </div>
 </header>
 
@@ -257,9 +256,9 @@ footer .wrap { display: grid; gap: .6rem; }
         <div class="rub">Já tentou ler a Bíblia e parou no Levítico?</div>
         <h1>Descubra os 20% da Bíblia que explicam <em>os outros 80%.</em></h1>
         <p class="lead prose">Com o Método 80/20, em 8 semanas e 20 a 30 minutos por dia, você entende a história inteira das Escrituras, do Gênesis ao Apocalipse. O texto vem em português e latim, verso a verso, com São Tomás de Aquino como guia.</p>
-        <div class="promo only-promo"><span class="rub">Promoção de lançamento</span><span><s>R$ 97</s> <b>R$ 47</b></span><span>termina em <span class="cd" data-countdown>3 dias</span></span></div>
+
         <div class="actions">
-          <a class="buy" href="#oferta">Quero começar <small>· R$ <span data-price>47</span></small></a>
+          <a class="buy" href="#oferta">Quero começar <small style="white-space:nowrap">· R$ 47</small></a>
           <a class="ghost" href="#conteudo">Ver páginas do livro</a>
         </div>
         <div class="trust"><span>701 páginas em PDF</span><span>4 bônus para imprimir</span><span>Garantia de 30 dias</span></div>
@@ -430,14 +429,14 @@ footer .wrap { display: grid; gap: .6rem; }
         <div class="row"><div><b>Bônus 2 · A Bíblia em uma página</b><span>linha do tempo em A3 · também oferecido como presente gratuito</span></div><div class="v">incluso</div></div>
         <div class="row"><div><b>Bônus 3 · A chave que une os dois Testamentos</b><span>pôster da tipologia em A3</span></div><div class="v">R$ 27</div></div>
         <div class="row"><div><b>Bônus 4 · Roteiro para grupos de estudo</b><span>oito encontros prontos</span></div><div class="v">R$ 47</div></div>
-        <div class="row total"><div><b>Valor somado</b></div><div class="v">R$ 198</div></div>
+        <div class="row total"><div><b>Valor de referência dos itens</b></div><div class="v">R$ 198</div></div>
         <div class="price">
-          <div class="rub only-promo">Promoção de lançamento · termina em <span class="cd" data-countdown>3 dias</span></div>
-          <div class="rub only-regular">Preço normal</div>
-          <div class="muted only-promo"><s>De R$ 97</s> por</div>
-          <div class="now"><small>R$</small><span data-price>47</span></div>
-          <p><span class="savings">Você economiza R$ <span data-save>151</span> sobre o valor somado.</span> Isso dá menos de R$ <span data-day>0,84</span> por dia de leitura do plano.<span class="only-promo"> Quando o contador zerar, o preço volta para R$ 97, no dia <span data-deadline>4 de novembro, às 23h59</span>.</span></p>
-          <a class="buy" href="#oferta">Quero o livro e os 4 bônus · R$ <span data-price>47</span></a>
+          <div class="rub">Seu investimento</div>
+
+
+          <div class="now"><small>R$</small>47</div>
+          <p>Menos de R$ 0,84 por dia de leitura do plano, com acesso imediato e 30 dias de garantia.</p>
+          <a class="buy" href="#oferta">Quero o livro e os 4 bônus <span style="white-space:nowrap">· R$ 47</span></a>
           <div class="trust" style="justify-content:center"><span>Acesso imediato</span><span>Leia no celular ou imprima</span><span>Garantia de 30 dias</span></div>
         </div>
       </div>
@@ -497,7 +496,7 @@ footer .wrap { display: grid; gap: .6rem; }
         <details><summary>Como eu recebo?</summary><p>Logo depois da confirmação do pagamento, você recebe o acesso para baixar o livro em PDF e os quatro bônus. Dá para ler no celular, no tablet ou no computador, e imprimir o que quiser.</p></details>
         <details><summary>E se eu atrasar o plano?</summary><p>Retome do ponto em que parou. O plano foi pensado para cinco dias de leitura por semana, com folga no sábado e no domingo. Constância vale mais que perfeição.</p></details>
         <details><summary>Posso usar com o meu grupo?</summary><p>Pode, e é o melhor jeito. O Bônus 4 traz oito encontros prontos. Cada participante precisa do seu próprio acesso ao livro para fazer as leituras da semana.</p></details>
-        <details><summary>A promoção termina mesmo?</summary><p>Sim. O preço de R$ 47 vale até a data indicada no contador. Depois disso, o livro com os bônus passa a custar R$ 97.</p></details>
+
         <details><summary>Como funciona a garantia?</summary><p>Você tem 30 dias. Se, depois das duas primeiras semanas do plano, sentir que o livro não ajudou, peça o reembolso e devolvemos 100% do valor.</p></details>
       </div>
     </div>
@@ -508,10 +507,10 @@ footer .wrap { display: grid; gap: .6rem; }
       <div class="stack">
         <div class="rub">Comece hoje</div>
         <h2>Daqui a oito semanas, você vai abrir a Bíblia sabendo onde está.</h2>
-        <p class="lead prose" style="margin-inline:auto">O livro, o plano de 56 dias e os quatro bônus, por R$ <span data-price>47</span>, com 30 dias de garantia.<span class="only-promo"> A promoção termina em <span class="cd" data-countdown>3 dias</span>.</span></p>
-        <a class="buy" href="#oferta">Quero o livro e os 4 bônus <small>· R$ <span data-price>47</span></small></a>
+        <p class="lead prose" style="margin-inline:auto">O livro, o plano de 56 dias e os quatro bônus, por R$ 47, com 30 dias de garantia.</p>
+        <a class="buy" href="#oferta">Quero o livro e os 4 bônus <small style="white-space:nowrap">· R$ 47</small></a>
       </div>
-      <p class="ps"><b>P.S.</b> Se você leu até aqui, já sabe que quer entender a Bíblia. O que falta é um caminho com começo, meio e fim. São 20 a 30 minutos por dia, com tudo no mesmo lugar: o texto, a explicação, São Tomás e o plano. Se não ajudar nas duas primeiras semanas, você recebe o dinheiro de volta.<span class="only-promo"> E o preço de R$ 47 vale só até o contador zerar.</span></p>
+      <p class="ps"><b>P.S.</b> Se você leu até aqui, já sabe que quer entender a Bíblia. O que falta é um caminho com começo, meio e fim. São 20 a 30 minutos por dia, com tudo no mesmo lugar: o texto, a explicação, São Tomás e o plano. Se não ajudar nas duas primeiras semanas, você recebe o dinheiro de volta.</p>
     </div>
   </section>
 </main>
@@ -524,50 +523,18 @@ footer .wrap { display: grid; gap: .6rem; }
 </footer>
 
 <div class="dock" aria-label="Comprar">
-  <div class="p"><b>R$ <span data-price>47</span><span class="only-promo"> <s style="font-weight:400;color:var(--muted);font-size:.8rem">R$ 97</s></span></b><span class="only-promo">termina em <span class="cd" data-countdown>3 dias</span></span><span class="only-regular">livro + 4 bônus</span></div>
+  <div class="p"><b>R$ 47</b><span>livro + 4 bônus · garantia de 30 dias</span></div>
   <a class="buy" href="#oferta">Quero o livro</a>
 </div>
 
 <script>
   /* ==== CONFIGURAÇÃO ==== */
-  // Fim da promoção (horário de Brasília). Depois desse momento, a página mostra o preço normal sozinha.
-  const PROMO_END = '2026-11-04T23:59:59-03:00';
-  const PRICE = { promo: 47, regular: 97 };
-  const STACK_TOTAL = 198;
-  // Links de checkout: um com o preço promocional e outro com o preço normal (Hotmart, Kiwify etc.).
-  const CHECKOUT = { promo: '', regular: '' };
+  // Cole aqui o link do checkout (Hotmart, Kiwify etc.). Enquanto estiver vazio, os botões levam à oferta.
+  const CHECKOUT_URL = '';
   /* ====================== */
-
-  const end = new Date(PROMO_END).getTime();
-  const money = n => n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  const two = n => String(n).padStart(2, '0');
-  function left(ms) {
-    const t = Math.max(0, Math.floor(ms / 1000));
-    const d = Math.floor(t / 86400), h = Math.floor(t % 86400 / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
-    return (d ? d + 'd ' : '') + two(h) + 'h ' + two(m) + 'm ' + two(s) + 's';
+  if (CHECKOUT_URL) {
+    document.querySelectorAll('a.buy').forEach(a => { a.href = CHECKOUT_URL; a.target = '_blank'; a.rel = 'noopener'; });
   }
-  try {
-    const f = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).formatToParts(new Date(end));
-    const g = k => (f.find(x => x.type === k) || {}).value;
-    document.querySelectorAll('[data-deadline]').forEach(el => el.textContent = `${g('day')} de ${g('month')}, às ${g('hour')}h${g('minute')}`);
-  } catch (e) {}
-  let last = null;
-  function tick() {
-    const ms = end - Date.now();
-    const on = ms > 0;
-    document.querySelectorAll('[data-countdown]').forEach(el => el.textContent = left(ms));
-    if (on === last) return;
-    last = on;
-    document.documentElement.dataset.promo = on ? 'on' : 'off';
-    const price = on ? PRICE.promo : PRICE.regular;
-    document.querySelectorAll('[data-price]').forEach(el => el.textContent = price);
-    document.querySelectorAll('[data-save]').forEach(el => el.textContent = STACK_TOTAL - price);
-    document.querySelectorAll('[data-day]').forEach(el => el.textContent = money(Math.ceil(price / 56 * 100) / 100));
-    const url = on ? CHECKOUT.promo : CHECKOUT.regular;
-    if (url) document.querySelectorAll('a.buy').forEach(a => { a.href = url; a.target = '_blank'; a.rel = 'noopener'; });
-  }
-  tick();
-  setInterval(tick, 1000);
 </script>
 
 </body>

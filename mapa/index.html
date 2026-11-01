@@ -303,7 +303,7 @@ form .buy { border: 0; cursor: pointer; width: 100%; }
       <div class="next" id="proximo">
         <div class="rub">O próximo passo</div>
         <h2>O mapa mostra o caminho. O livro percorre com você.</h2>
-        <p class="prose"><i>O Essencial da Bíblia</i> explica cada um desses movimentos e traz os textos completos em português e latim, com São Tomás de Aquino como guia e um plano de 8 semanas.<span class="only-promo"> Na promoção de lançamento sai por R$ 47, até o contador zerar: <span class="cd" data-countdown>3 dias</span>.</span></p>
+        <p class="prose"><i>O Essencial da Bíblia</i> explica cada um desses movimentos e traz os textos completos em português e latim, com São Tomás de Aquino como guia e um plano de 8 semanas. Tudo isso por R$ 47, com garantia de 30 dias.</p>
         <div><a class="ghost" href="../#oferta">Conhecer o livro</a></div>
       </div>
     </div>
@@ -322,7 +322,6 @@ form .buy { border: 0; cursor: pointer; width: 100%; }
   // Enquanto estiver vazio, o mapa é liberado sem guardar o cadastro.
   const FORM_ENDPOINT = 'https://fdcedfea.sibforms.com/serve/MUIFAESxISyeS7UGbfknWfJhGpVEZgNI2jkqnGzFAfwaoF0SgElyEUOvphyfTyEfFhVm70fvdfZJ_t1JAqW8ZgDl_7zZu_0l346IEDZ2kLXCBvbEA2L5eIjlJoiO1QsY4rnHR4x4dwSugQsLlXnOf4eMBE1f0tfxxCVRnDg5qs3BmgdKCL5E-6c6EgaskLaLrjJRWz1PL1dPSN1jwA==';
   const FIELD = { nome: 'NOME', email: 'EMAIL' };   // nomes dos campos que o serviço espera
-  const PROMO_END = '2026-11-04T23:59:59-03:00';    // o mesmo prazo da página de vendas
   /* ====================== */
 
   const form = document.getElementById('form-mapa');
@@ -346,16 +345,7 @@ form .buy { border: 0; cursor: pointer; width: 100%; }
     document.getElementById('pronto').hidden = false;
   });
 
-  const end = new Date(PROMO_END).getTime();
-  const two = n => String(n).padStart(2, '0');
-  function tick() {
-    const ms = end - Date.now();
-    document.documentElement.dataset.promo = ms > 0 ? 'on' : 'off';
-    const t = Math.max(0, Math.floor(ms / 1000));
-    const d = Math.floor(t / 86400), h = Math.floor(t % 86400 / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
-    document.querySelectorAll('[data-countdown]').forEach(el => el.textContent = (d ? d + 'd ' : '') + two(h) + 'h ' + two(m) + 'm ' + two(s) + 's');
-  }
-  tick(); setInterval(tick, 1000);
+
 </script>
 </body>
 </html>
