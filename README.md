@@ -27,8 +27,8 @@ Quando o contador zera, a página troca sozinha para o preço normal e para o li
 **Isca (`mapa/index.html`)**
 
 ```js
-const FORM_ENDPOINT = '';                          // endereço que recebe os cadastros
-const FIELD = { nome: 'nome', email: 'email' };    // nomes dos campos esperados pelo serviço
+const FORM_ENDPOINT = 'https://…sibforms.com/serve/…';  // endereço do formulário do Brevo (já configurado)
+const FIELD = { nome: 'NOME', email: 'EMAIL' };    // nomes dos campos do formulário do Brevo
 const PROMO_END = '2026-11-04T23:59:59-03:00';     // o mesmo prazo da página de vendas
 ```
 
