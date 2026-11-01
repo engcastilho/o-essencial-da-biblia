@@ -16,10 +16,10 @@ Tudo o que precisa ser ajustado fica no bloco `CONFIGURAÇÃO`, no fim de cada p
 **Página de vendas (`index.html`)**
 
 ```js
-const CHECKOUT_URL = '';   // link do checkout (Hotmart, Kiwify etc.)
+const CHECKOUT_URL = 'https://pay.kiwify.com.br/qYO3S7p';   // link do checkout na Kiwify
 ```
 
-Preço único de R$ 47. Enquanto `CHECKOUT_URL` estiver vazio, os botões levam à seção da oferta.
+Preço único de R$ 47. Todos os botões de compra levam a esse link.
 
 **Isca (`mapa/index.html`)**
 
